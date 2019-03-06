@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width , initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+
+<style>
+
+#image {
+	width:700px;
+	position: relative;
+	margin: 100px auto;
+
+}
+
+img {
+	width: 100%;
+	width: 200px;
+	height: auto;
+}
+
+.img1 {
+	border:2px solid;
+	background-color: cadetblue;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: inline-block;
+	zoom:0;
+	transition: 0.5s;
+}
+
+
+.img2 {
+	position: absolute;
+	top: -37px;
+	left: 50%;
+	transform: translateX(-50%);
+	border:2px solid red;
+	z-index: 99;
+	background-color: bisque;
+	zoom:150%;
+	transition: 0.5s;
+	
+}
+
+
+
+.img3 {
+	border:2px solid orange;
+	background:chocolate;
+	position: absolute;
+	left: 100%;
+	top: 0;
+	display: inline-block;
+	zoom: 0;
+	transform: translateX(-100%);
+	transition: 0.5s;
+}
+
+.img11 {
+	/*border:2px solid;
+	background-color: cadetblue;*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: 0.5s;
+	display: inline-block;
+	zoom: 0;
+
+}
+
+.img22 {
+	position: absolute;
+	top: -37px;
+	left: 50%;
+	transform: translateX(-50%);
+	/*border:2px solid red;*/
+	z-index: 99;
+	/*background-color: bisque;*/
+	zoom:150%;
+	transition: 0.5s;
+}
+
+.img33 {
+	/*border:2px solid orange;
+	background:chocolate;*/
+	position: absolute;
+	left: 100%;
+	top: 0;
+	display: inline-block;	
+	transition: 0.5s;
+	zoom: 0;
+	transform: translateX(-100%);
+}
+
+</style>
+
+<script>
+	$(document).ready(function(){
+		$(document).on('click', ".img1", function(){
+			//$(".img2").removeClass("img2");
+			$(".img1").addClass("img22").removeClass("img1");
+			$(".img2").addClass("img33").removeClass("img2");
+			$(".img3").addClass("img11").removeClass("img3");
+		});
+
+
+	});
+
+$(document).on('click', ".img11", function(){
+			//$(".img2").removeClass("img2");
+			$(".img11").addClass("img2").removeClass("img11");
+			$(".img22").addClass("img3").removeClass("img22");
+			$(".img33").addClass("img1").removeClass("img33");
+		});
+
+$(document).ready(function(){
+$(document).on('click', ".img3", function(){
+			//$(".img2").removeClass("img2");
+			$(".img3").addClass("img22").removeClass("img3");
+			$(".img2").addClass("img11").removeClass("img2");
+			$(".img1").addClass("img33").removeClass("img1");
+		});
+});
+$(document).on('click', ".img33", function(){
+			alert();
+			//$(".img2").removeClass("img2");
+			$(".img33").addClass("img2").removeClass("img33");
+			$(".img22").addClass("img1").removeClass("img22");
+			$(".img11").addClass("img3").removeClass("img11");
+		});
+
+	</script>
+
+<body>
+	<div class="container">
+		<div id="image">
+			<div class="img1">
+				<img src="1.jpg">
+				<p>div 1 image 1</p>
+			</div>
+			<div class="img2">
+				<img src="2.jpg">
+				<p>div 2 image 2</p>
+			</div>
+			<div class="img3">
+				<img src="3.jpg">
+				<p>div 3 image 3</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
